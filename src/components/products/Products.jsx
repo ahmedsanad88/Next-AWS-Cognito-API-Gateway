@@ -15,7 +15,7 @@ const Products = () => {
       const getAllProducts = async () => {
         try {
           const res = await axios.get("http://localhost:3000/api/items");
-          const { body } = res.data;
+          const { body } = await res.data;
           setProducts(body.products);
         } catch (error) {
           setProducts(null);
@@ -36,14 +36,14 @@ const Products = () => {
   if (!products) {
     setTimeout(() => {
       setTempPage(
-        <>
+        <div className="flex flex-col items-center justify-center">
           <p>Sorry, Error with the data</p>
           <Button
             text="reload"
             onClick={() => window.location.reload()}
             type="button"
           />
-        </>
+        </div>
       );
     }, 15000);
     return tempPage;
