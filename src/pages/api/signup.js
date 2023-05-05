@@ -13,7 +13,7 @@ export default function handler(req, res) {
 
   UserPool.signUp(email, password, [], null, function (err, result) {
     if (err) {
-      res.json({ error: err.message, type: "error" });
+      res.status(400).json({ error: err.message, type: "error" });
     }
     res.status(200).json(result);
   });

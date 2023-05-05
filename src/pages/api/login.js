@@ -31,7 +31,7 @@ export default function handler(req, res) {
     },
 
     onFailure: function (err) {
-      res.json({ error: err.message, type: "error" });
+      res.status(400).json({ error: err.message, type: "error" });
     },
   });
 }
