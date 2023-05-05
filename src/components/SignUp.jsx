@@ -6,6 +6,7 @@ import { signup } from "@/server/signup";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import { login } from "@/server/login";
+import Link from "next/link";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -67,6 +68,13 @@ const SignUp = () => {
         />
         <Button text={pathname === "/signup" ? "Sign Up" : "Login"} />
       </form>
+      <div className="mt-4 text-gray-300">
+        <Link href={pathname === "/signup" ? "/login" : "/signup"}>
+          {pathname === "/signup"
+            ? "Already have an account? Login here"
+            : "Don't have an account? Sign up here"}
+        </Link>
+      </div>
     </div>
   );
 };
