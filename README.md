@@ -1,38 +1,148 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NextJS, AWS Cognito, and API gateway integration 📦
 
-## Getting Started
+The aim of the project is to integrate NextJS, AWS Cognito for **Authorization & Authentication** and API Gateway **with Lambda Functions** to create a simple full stack app that includes the following features:
 
-First, run the development server:
+> - Created login and registration system using AWS Cognito
+> - Created API routes using the AWS API Gateway that prevent unauthorised users.
+> - Created a lambda function that handles fetching and returning data from the database using NodeJS.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+# Demo-Preview👨🏽‍🏫
+
+> Demo will be added soon.
+
+# Table of contents🗂
+
+- [NextJS, AWS Cognito, and API gateway integration 📦](#nextjs-aws-cognito-and-api-gateway-integration-)
+- [Demo-Preview👨🏽‍🏫](#demo-preview)
+- [Table of contents🗂](#table-of-contents)
+- [Functionality💡](#functionality)
+- [disclaimer🔴](#disclaimer)
+- [Requirements](#requirements)
+- [Installation \& Getting started⚙️](#installation--getting-started️)
+- [All dependencies](#all-dependencies)
+- [Development🛠](#development)
+- [Contribute🤝](#contribute)
+- [License🧾](#license)
+- [Footer💐](#footer)
+- [Author❤️](#author️)
+
+# Functionality💡
+
+- Main Technology Used:
+  - NextJS
+  - TailwindCSS
+  - Axios
+  - AWS Cognito
+  - AWS API Gateway
+  - react-icons
+  - react-toastify
+  - cookies-next
+
+# disclaimer🔴
+
+> This project is still under building process.
+
+# Requirements
+
+- Node.js 16+ and npm
+
+# Installation & Getting started⚙️
+
+Run the following command on your local environment:
+
+> Use the package manager [npm] to install All dependencies.
+
+```shell
+git clone --depth=1 https://github.com/ahmedsanad88/.git my-project-name
+cd my-project-name
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then, you can run locally in development mode with live reload:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+> Run Project on dev mode
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```shell
+npm run dev
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Open http://localhost:3000 with your favorite browser to see your project.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+````shell
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy to production
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You can see the results locally in production mode with:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```shell
+$ npm run build
+$ npm run start
+````
 
-## Deploy on Vercel
+The generated HTML and CSS files are minified (built-in feature from Next js). It will also removed unused CSS from [Tailwind CSS](https://tailwindcss.com).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You can create an optimized production build with:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```shell
+npm run build-prod
+```
+
+[(Back to top)](#table-of-contents)
+
+# All dependencies
+
+```javascript
+  "dependencies": {
+    "amazon-cognito-identity-js": "^6.2.0",
+    "autoprefixer": "10.4.14",
+    "aws-jwt-verify": "^4.0.0",
+    "axios": "^1.4.0",
+    "cookies-next": "^2.1.1",
+    "eslint": "8.39.0",
+    "eslint-config-next": "13.3.4",
+    "next": "13.3.4",
+    "postcss": "8.4.23",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
+    "react-toastify": "^9.1.2",
+    "tailwindcss": "3.3.2"
+  }
+```
+
+[(Back to top)](#table-of-contents)
+
+# Development🛠
+
+**- What Next?**
+
+> Expand the project.
+
+[(Back to top)](#table-of-contents)
+
+# Contribute🤝
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+[(Back to top)](#table-of-contents)
+
+# License🧾
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+[(Back to top)](#table-of-contents)
+
+# Footer💐
+
+Leave a star on GitHub, give a clap on Medium and share this guide if you found this helpful.
+
+[(Back to top)](#table-of-contents)
+
+# Author❤️
+
+`Ahmed Sanad`
+
+[(Back to top)](#table-of-contents)
