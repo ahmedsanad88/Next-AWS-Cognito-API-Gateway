@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { login } from "@/server/login";
 import Link from "next/link";
 import { isAxiosError } from "axios";
+import { emailValidate, passwordValidate } from "@/utils/regexp";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -16,6 +17,17 @@ const SignUp = () => {
 
   const handleSignUp = async (e) => {
     e.preventDefault();
+    if (!emailValidate(email)) {
+      toast.error("Invalid email", { theme: "colored" });
+      return;
+    }
+    if (!passwordValidate(password)) {
+      toast.error(
+        "The password must contain at least one uppercase letter, one lowercase letter, one number and one special character and more than or equal to 8 characters",
+        { theme: "colored" }
+      );
+      return;
+    }
     signup({ email, password }).then((res) => {
       console.log(res);
       if (!isAxiosError(res) && !res.type) {
