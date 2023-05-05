@@ -8,7 +8,11 @@ The aim of the project is to integrate NextJS, AWS Cognito for **Authorization &
 
 # Demo-Preview👨🏽‍🏫
 
-> Demo will be added soon.
+
+
+https://user-images.githubusercontent.com/57454543/236359962-96c14bd4-13cd-4d6f-ad7c-e1523a08a398.mp4
+
+
 
 # Table of contents🗂
 
@@ -53,7 +57,7 @@ Run the following command on your local environment:
 > Use the package manager [npm] to install All dependencies.
 
 ```shell
-git clone --depth=1 https://github.com/ahmedsanad88/.git my-project-name
+git clone --depth=1 https://github.com/ahmedsanad88/Next-AWS-Cognito-API-Gateway.git my-project-name
 cd my-project-name
 npm install
 ```
