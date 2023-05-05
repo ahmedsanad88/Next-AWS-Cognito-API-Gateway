@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import { login } from "@/server/login";
 import Link from "next/link";
+import { isAxiosError } from "axios";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -16,14 +17,16 @@ const SignUp = () => {
   const handleSignUp = async (e) => {
     e.preventDefault();
     signup({ email, password }).then((res) => {
-      if (!res.error) {
+      console.log(res);
+      if (!isAxiosError(res) && !res.type) {
         setCookie("userSub", res.userSub);
         toast.success("User created successfully", { theme: "colored" });
         push(`/validate-user/${email}`);
         setEmail("");
         setPassword("");
       } else {
-        toast.error(res.error, { theme: "colored" });
+        if (res.type === "error") toast.error(res.error, { theme: "colored" });
+        toast.error(res?.response?.data?.error, { theme: "colored" });
       }
     });
   };
@@ -31,14 +34,15 @@ const SignUp = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     login({ email, password }).then((res) => {
-      if (!res.error) {
+      if (!isAxiosError(res) && !res.type) {
         setCookie("accessToken", res);
         setEmail("");
         setPassword("");
         toast.success("User Login successfully", { theme: "colored" });
         push("/");
       } else {
-        toast.error(res.error, { theme: "colored" });
+        if (res.type === "error") toast.error(res.error, { theme: "colored" });
+        toast.error(res?.response?.data?.error, { theme: "colored" });
       }
     });
   };
