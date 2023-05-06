@@ -14,7 +14,9 @@ const Products = () => {
     if (sub) {
       const getAllProducts = async () => {
         try {
-          const res = await axios.get("http://localhost:3000/api/items");
+          const res = await axios.get(
+            `${process.env.NEXT_PUBLIC_API_BASE_URL_LOCAL}/api/items`
+          );
           const { body } = await res.data;
           setProducts(body.products);
         } catch (error) {
